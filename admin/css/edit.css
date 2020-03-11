@@ -1,0 +1,46 @@
+:root {
+  --backgroundColor: #ccc;
+}
+
+body {
+  font-family: Roboto;
+  background: var(--backgroundColor);
+}
+
+form {
+  width: 380px;
+  margin: 5% auto;
+  padding: 2%;
+  text-align: center;
+}
+
+label {
+  text-align-last: left;
+}
+
+input {
+  margin: 5px 0 5px 10px;
+  padding: 10px 5px;
+  width: 240px;
+}
+
+.submitBtn {
+  width: 120px;
+  text-align: center;
+  margin-top: 5%;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+select {
+  width: 240px;
+  background: #fff;
+  padding: 10px 5px;
+}
+
+.submitBtn:hover {
+  color: #fff;
+  background: #aaa;
+  cursor: pointer;
+}

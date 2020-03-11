@@ -1,0 +1,31 @@
+body {
+  background: #ccc;
+  font-family: Roboto;
+}
+
+.product {
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 50px;
+  width: 640px;
+  margin: 0 auto 25px auto;
+}
+
+h1 {
+  text-align: left;
+  margin-left: 5%;
+}
+
+p {
+  text-align: left;
+  margin-left: 5%;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+img {
+  width: 200px;
+  float: right;
+  margin: -50px 20px;
+  height: 150px;
+}
