@@ -5,7 +5,7 @@ session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$command = 'SELECT username, password FROM admins;';
+$command = 'SELECT username, password FROM Admins;';
 $result = query($command);
 
 if (isAdmin($username, $password, $result)) {
