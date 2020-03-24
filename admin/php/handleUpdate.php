@@ -2,28 +2,32 @@
 require_once '../../php/lib/config.php';
 
 $table = $_POST['table'];
-if ($table == 'family') {
-  $idFamily = $_POST['idFamily'];
+if ($table == 'Topic') {
+  $topicCode = $_POST['topicCode'];
   $name = $_POST['name'];
 
-  $command = 'UPDATE ' . $table . ' SET name="' . $name . '" WHERE idFamily=' . $idFamily . ';';
-} else if ($table == 'product') {
-  $idProduct = $_POST['idProduct'];
-  $name = $_POST['name'];
-  $description = $_POST['description'];
-  $price = $_POST['price'];
+  $command = 'UPDATE ' . $table . ' SET name="' . $name . '" WHERE topicCode=' . $topicCode . ';';
+} else if ($table == 'News') {
+  $idNew = $_POST['idNew'];
+  $title = $_POST['title'];
+  $body = $_POST['body'];
+  $author = $_POST['author'];
   if (isPhoto($_FILES['photo'])) {
     $photo = $_FILES['photo'];
     $dir_img = time() . '_' . $photo['name'];
     $fullDir = $dir_site . 'images/' . $dir_img;
   }
-  $idFamily = $_POST['idFamily'];
 
-  $command = 'UPDATE ' . $table . ' SET  name="' . $name . '", description="' . $description . '", price=' . $price . ', 
-  dir_img="' . $dir_img . '", idFamily=' . $idFamily . ', state=1 WHERE idProduct=' . $idProduct . ';';
+  $topicCode = 0;
+  foreach ($_POST['topicCodes'] as $key => $line) {
+    $topicCode += $line;
+  }
+
+  echo $command = 'UPDATE ' . $table . ' SET  title="' . $title . '", body="' . $body . '", author="' . $author . '", 
+  dir_img="' . $dir_img . '", topicCode=' . $topicCode . ' WHERE idNew=' . $idNew . ';';
 }
 
-$tempSelect = 'SELECT dir_img FROM product WHERE idProduct=' . $idProduct . ';';
+$tempSelect = 'SELECT dir_img FROM News WHERE idNew=' . $idNew . ';';
 $oldFileName = mysqli_fetch_array(query($tempSelect))['dir_img'];
 
 unlink($dir_site . 'images/' . $oldFileName);

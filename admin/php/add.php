@@ -26,13 +26,13 @@
       }
 
       echo ('<label for="title">Title</label>');
-      echo ('<input type="text" name="title"></input><br>');
+      echo ('<input type="text" name="title" required></input><br>');
       echo ('<label for="body">Body</label>');
-      echo ('<input type="text" name="body"></input><br>');
-      echo ('<label for="author">Author</label>');
-      echo ('<input type="number" name="author"></input><br>');
+      echo ('<textarea name="body" required></textarea><br>');
+      echo ('<label for="text">Author</label>');
+      echo ('<input type="text" name="author" required></input><br>');
       echo ('<label for="photo">Photo</label>');
-      echo ('<input type="file" name="photo"></input><br>');
+      echo ('<input type="file" name="photo" required></input><br>');
       echo ($topicComboString . '<br>');
     } else if ($table == 'Topics') {
       echo ('<label for="name">Name</label>');

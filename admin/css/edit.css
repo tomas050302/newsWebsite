@@ -24,6 +24,13 @@ input {
   width: 240px;
 }
 
+textarea {
+  margin: 5px 0 5px 10px;
+  padding: 10px 5px;
+  width: 340px;
+  height: 100px;
+}
+
 input[type="checkbox"] {
   display: inline-block;
   margin: 6px;
