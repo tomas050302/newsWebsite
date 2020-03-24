@@ -15,28 +15,26 @@
   ?>
   <form action="handleAdd.php?table=<?php echo $table ?>" method="post" enctype="multipart/form-data">
     <?php
-    if ($table == 'product') {
+    if ($table == 'News') {
       require('../../php/lib/config.php');
-      $command = 'SELECT * FROM family';
+      $command = 'SELECT * FROM Topic';
       $result = query($command);
-      $familiesSelect = "<option value=''>--Select a Family --</option>";
+      $topicComboString = "";
 
       foreach ($result as $key => $line) {
-        $familiesSelect .= '<option value=' . $line['idFamily'] . '>' . $line['name'] . '</option>';
+        $topicComboString .= '<input name="topicCodes[]" type="checkbox" value=' . $line['topicCode'] . '>' . $line['name'] . '</input>';
       }
 
-      echo ('<label for="name">Name</label>');
-      echo ('<input type="text" name="name"></input><br>');
-      echo ('<label for="description">Description</label>');
-      echo ('<input type="text" name="description"></input><br>');
-      echo ('<label for="price">Price</label>');
-      echo ('<input type="number" name="price"></input><br>');
+      echo ('<label for="title">Title</label>');
+      echo ('<input type="text" name="title"></input><br>');
+      echo ('<label for="body">Body</label>');
+      echo ('<input type="text" name="body"></input><br>');
+      echo ('<label for="author">Author</label>');
+      echo ('<input type="number" name="author"></input><br>');
       echo ('<label for="photo">Photo</label>');
       echo ('<input type="file" name="photo"></input><br>');
-      echo ('<select name="idFamily">
-        ' . $familiesSelect . '
-      </select><br>');
-    } else if ($table == 'family') {
+      echo ($topicComboString . '<br>');
+    } else if ($table == 'Topics') {
       echo ('<label for="name">Name</label>');
       echo ('<input type="text" name="name"></input>');
     }

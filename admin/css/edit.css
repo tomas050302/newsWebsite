@@ -24,6 +24,15 @@ input {
   width: 240px;
 }
 
+input[type="checkbox"] {
+  display: inline-block;
+  margin: 6px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #808080;
+  background: #FFF;
+}
+
 .submitBtn {
   width: 120px;
   text-align: center;

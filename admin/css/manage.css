@@ -3,7 +3,7 @@ body {
 }
 
 table {
-  width: 90%;
+  width: 95%;
   margin: 4% auto;
   border-collapse: collapse;
 }
@@ -14,11 +14,24 @@ td, th, tr {
 }
 
 span {
-  padding-left: 8px;
+  margin: 8px;
 }
 
 th {
+  width: 90px;
   background: #eaeaea;
+}
+
+.half {
+  width: 45px;
+}
+
+.big {
+  width: 240px;
+}
+
+.huge {
+  width: 350px;
 }
 
 a {

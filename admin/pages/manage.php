@@ -1,4 +1,5 @@
-<?php require('../lib/auth.inc.php');
+<?php
+require('../lib/auth.inc.php');
 $table = $_GET['table'];
 ?>
 
@@ -19,25 +20,22 @@ $table = $_GET['table'];
     <?php
     require('../../php/lib/config.php');
 
-
-
-    if ($table == 'family') {
+    if ($table == 'Topic') {
       echo ('
-        <th><a href="?order=idFamily&table=family">Id Family</a></th>
-        <th><a href="?order=name&table=family">Name</a></th>
+        <th><a href="?order=topicCode&table=Topics">Topic Code</a></th>
+        <th><a href="?order=name&table=Topics">Name</a></th>
       ');
-    } else {
+    } elseif ($table == 'News') {
       echo ('
-        <th><a href="?order=idProduct&table=product">Id Product</a></th>
-        <th><a href="?order=name&table=product">Name</a></th>
-        <th><a href="?order=description&table=product">Description</a></th>
-        <th><a href="?order=price&table=product">Price</a></th>
-        <th><a href="?order=dir_img&table=product">Image</a></th>
-        <th><a href="?order=idFamily&table=product">Family</a></th>
-        <th><a href="?order=state&table=product">State</a></th>
+        <th><a href="?order=idNew&table=News">Id New</a></th>
+        <th class="big"><a href="?order=title&table=News">Title</a></th>
+        <th class="huge"><a href="?order=body&table=News">Body</a></th>
+        <th class="big"><a href="?order=author&table=News">Author</a></th>
+        <th><a href="?order=dir_img&table=News">Image</a></th>
+        <th><a href="?order=topicCode&table=News">topicCode</a></th>
       ');
     }
-    echo ('<th colspan="2">Actions</th>');
+    echo ('<th class="half" colspan="2">Actions</th>');
 
     require($dir_site . 'admin/php/buildDataTable.php');
     ?>
