@@ -25,13 +25,14 @@ if ($table == 'News') {
 
   copy($photo['tmp_name'], $fullDir);
 } else if ($table == 'Topic') {
+  $topicCode = $_POST['topicCode'];
   $name = $_POST['name'];
 
-  $command .= ' (name) VALUES ("' . $name . '");';
+  $command .= ' (topicCode, name) VALUES (' . $topicCode . ',"' . $name . '");';
 }
 
 if (query($command)) {
-  echo ('New added successefully');
+  echo ($table . ' added successefully');
   header("Refresh:1; url=../pages/manage.php?table=" . $table);
 } else {
   echo ('Error!');

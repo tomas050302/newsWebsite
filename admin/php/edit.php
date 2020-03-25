@@ -24,12 +24,12 @@
 
     if ($table == 'Topic') {
       echo ('
-        <h1>Family</h1>
-        <h2>Id: ' . $result['idFamily'] . '</h2>
-          <input type="hidden" name="idFamily" value=' . $result['idFamily'] . '></input>
-          <input type="hidden" name="table" value= ' . $table . '></input>
+        <h1>Topic</h1>
+        <h2>Id: ' . $result['topicCode'] . '</h2>
+          <input type="hidden" name="topicCode" value=' . $result['topicCode'] . '></input>
+          <input type="hidden" name="table" value="' . $table . '"></input>
           <label for="name">Name</label>
-          <input type="text" name="name" value=' . $result['name'] . '></input>
+          <input type="text" name="name" value="' . $result['name'] . '"></input>
         ');
     } else if ($table == 'News') {
       echo ('

@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['table'])) {
   $table = $_GET['table'];
-  $primaryKey = $table == 'family' ? 'idFamily' : 'idProduct';
+  $primaryKey = $table == 'Topic' ? 'topicCode' : 'idNew';
   $id = $_GET['id'];
   require_once '../../php/lib/config.php';
 

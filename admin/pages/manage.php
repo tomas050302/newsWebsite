@@ -22,8 +22,8 @@ $table = $_GET['table'];
 
     if ($table == 'Topic') {
       echo ('
-        <th><a href="?order=topicCode&table=Topics">Topic Code</a></th>
-        <th><a href="?order=name&table=Topics">Name</a></th>
+        <th class="huge"><a href="?order=topicCode&table=Topics">Topic Code</a></th>
+        <th class="mega"><a href="?order=name&table=Topics">Name</a></th>
       ');
     } elseif ($table == 'News') {
       echo ('
@@ -31,8 +31,8 @@ $table = $_GET['table'];
         <th class="big"><a href="?order=title&table=News">Title</a></th>
         <th class="huge"><a href="?order=body&table=News">Body</a></th>
         <th class="big"><a href="?order=author&table=News">Author</a></th>
-        <th><a href="?order=dir_img&table=News">Image</a></th>
-        <th><a href="?order=topicCode&table=News">topicCode</a></th>
+        <th class="half"><a href="?order=dir_img&table=News">Image</a></th>
+        <th class="half"><a href="?order=topicCode&table=News">topicCode</a></th>
       ');
     }
     echo ('<th class="half" colspan="2">Actions</th>');

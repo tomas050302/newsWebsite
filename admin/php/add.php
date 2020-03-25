@@ -15,8 +15,8 @@
   ?>
   <form action="handleAdd.php?table=<?php echo $table ?>" method="post" enctype="multipart/form-data">
     <?php
+    require('../../php/lib/config.php');
     if ($table == 'News') {
-      require('../../php/lib/config.php');
       $command = 'SELECT * FROM Topic';
       $result = query($command);
       $topicComboString = "";
@@ -34,7 +34,14 @@
       echo ('<label for="photo">Photo</label>');
       echo ('<input type="file" name="photo" required></input><br>');
       echo ($topicComboString . '<br>');
-    } else if ($table == 'Topics') {
+    } else if ($table == 'Topic') {
+      $command = 'SELECT topicCode FROM Topic ORDER BY topicCode DESC;';
+      $result = mysqli_fetch_array(query($command));
+
+      $lastId = $result[0];
+      $nextId = $lastId * 2;
+
+      echo ('<input type="hidden" name="topicCode" value="' . $nextId . '"></input>');
       echo ('<label for="name">Name</label>');
       echo ('<input type="text" name="name"></input>');
     }
